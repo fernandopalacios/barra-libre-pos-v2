@@ -1,0 +1,21 @@
+<div class="products-content p-lg-3">
+    <h5 class="small-title text-strong m-0">Comida</h5>
+    <div class="row promotions-container products-carousel mb-4">
+        <div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 col-xl-4" *ngFor="let product of food">
+            <app-pos-product [product]="product"></app-pos-product>
+        </div>
+    </div>
+    <h5 class="small-title text-strong m-0">Bebidas</h5>
+    <div class="row drinks-container products-carousel mb-4">
+        <div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 col-xl-4" *ngFor="let product of drinks">
+            <app-pos-product [product]="product" (addProduct)="addProductToOrder(product)"></app-pos-product>
+        </div>
+    </div>
+    <h5 class="small-title text-strong m-0">Botanas</h5>
+    <div class="row drinks-container products-carousel mb-4">
+        <div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 col-xl-4" *ngFor="let product of snacks">
+            <app-pos-product [product]="product" (addProduct)="addProductToOrder(product)"></app-pos-product>
+        </div>
+    </div>
+
+</div>

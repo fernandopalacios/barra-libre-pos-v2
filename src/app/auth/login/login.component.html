@@ -1,0 +1,38 @@
+<div class="row login-container min-vh-100">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center splash-container">
+        <div class="card logo-card m-4">
+            <div class="card-body logo-card-body text-center d-flex justify-content-center">
+                <div class="main-logo logo-content">
+                    <img src="/images/main-logo.png" alt="Logo de Barra Libre POS" class="logo main" />
+                </div>
+                <div class="customer-logo logo-content">
+                    <img [src]="customerLogoUrl" alt="Logo de Cliente" class="logo customer" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 offset-md-1 justify-content-center d-flex flex-column login-form-container">
+        <div class="card login-card my-3">
+            <div class="card-header login-card-header text-center">
+                <h2 class="jungle-text">Iniciar Sesión</h2>
+            </div>
+            <div class="card-body login-card-body">
+                <form action="" [formGroup]="loginForm">
+                    <div class="form-group mb-3">
+                        <label for="username">Usuario:</label>
+                        <input type="text" class="form-control" id="username" formControlName="username"
+                            autocomplete="off">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="password">Contraseña:</label>
+                        <input type="text" class="form-control" id="password" formControlName="password"
+                            type="password">
+                    </div>
+                    <div class="form-group mb-3">
+                        <button class="btn btn-login" (click)="submitLogin()">Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

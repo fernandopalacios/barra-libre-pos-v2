@@ -1,0 +1,18 @@
+<div class="orders-list-section panel">
+    <div class="orders-list-header panel-header text-center">
+        <h5 class="panel-title text-center">Órdenes</h5>
+        <button class="btn btn-jungle btn-sm" (click)="clickNewOrderButton()"><i
+                class="fa-solid fa-circle-plus me-md-1"></i>
+            Nueva Orden</button>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group orders-list-group text-center">
+            <li class="list-group-item orders-list-item" *ngFor="let order of orders">
+                <a class="list-group-item-link orders-list-item-link" [ngClass]="{'active': order.id == selectedOrderId}"
+                    (click)="clickSelectOrder(order)">
+                    <span class="d-md-none d-lg-inline">Orden</span> #{{order?.id?.toString()?.padStart(5,'0')}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="card product-card mt-3">
+    <div class="card-body product-card-body pb-0">
+        <div class="product-image-container text-center">
+            <img [src]="'http://localhost:5234/Resources/'+product.image" class="product-image" alt="">
+        </div>
+        <p class="product-name mt-2">{{product.name}}</p>
+    </div>
+    <div class="card-footer product-card-footer d-flex justify-content-between align-items-center">
+        <span class="text-strong product-price text-sienna"> {{product.price.toString() | currency }}</span>
+        <button class="btn btn-leaf btn-sm" [disabled]="product.stock == 0" (click)="clickAddButton(product)">
+            <i class="d-lg-none d-xl-inline {{product.stock > 0 ? addIcon : banIcon }}"></i>
+            {{ (product.stock > 0 ? "Agregar" : 'Agotado') }}
+        </button>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="row">
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" (navChange)="onNavChange($event)" class="nav-tabs wizard-nav-tabs">
+        <li class="wizard-tab" [ngbNavItem]="1">
+            <button class="wizard-link" ngbNavLink>Pago con Efectivo</button>
+            <ng-template ngbNavContent>
+                <app-pos-cash-payment></app-pos-cash-payment>
+            </ng-template>
+        </li>
+        <li class="wizard-tab" [ngbNavItem]="2">
+            <button class="wizard-link" ngbNavLink>Pago con Tarjeta</button>
+            <ng-template ngbNavContent>
+                <app-pos-card-payment></app-pos-card-payment>
+            </ng-template>
+        </li>
+    </ul>
+    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+</div>

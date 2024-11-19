@@ -1,0 +1,46 @@
+@import '_custom-colors.scss';
+
+.order-checkout-list-group {
+    .order-checkout-list-item {
+        border-radius: 0;
+        border-bottom: none;
+        border-right: none;
+        border-left: none;
+        border-top: 1px solid lighten($charcoal-black, 60%);
+
+        &:first-child {
+            border-top: none;
+        }
+
+        .product-description {
+            max-width: 180px;
+            display: inline-block;
+            word-wrap: break-word;
+        }
+    }
+}
+
+.empty-checkout-content {
+    color: lighten($charcoal-black, 40%);
+
+    .empty-checkout-icons {
+        font-size: 2rem;
+    }
+}
+
+.order-checkout-card-footer {
+    background-color: $white;
+    border-top: 1px solid $jungle-green;
+}
+
+.delete-product-button:hover, .delete-product-button:active {
+    color: $bootstrap-red;
+    cursor: pointer;
+}
+
+.tip-input-group {
+    width: 130px;
+    input {
+        text-align: right;
+    }
+}

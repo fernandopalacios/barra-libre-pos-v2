@@ -1,0 +1,17 @@
+<app-pos-toolbar></app-pos-toolbar>
+<div class="row order-container">
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 orders-list-section">
+        <app-pos-orders-list 
+        [orders]="ordersList"
+        [selectedOrderId]="selectedOrder ? selectedOrder.id : 0"
+        (selectedOrder)="setSelectedOrder($event)"
+        (newOrder)="createNewOrder()"
+        ></app-pos-orders-list>
+    </div>
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-xl-7 products-section">
+        <app-pos-products-list *ngIf="selectedOrder"></app-pos-products-list>
+    </div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 checkout-section">
+        <app-pos-order-checkout *ngIf="selectedOrder" [order]="selectedOrder"></app-pos-order-checkout>
+    </div>
+</div>
