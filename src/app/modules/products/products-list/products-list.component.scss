@@ -1,0 +1,12 @@
+@import '_custom-colors.scss';
+
+.small-title {
+    color: lighten($charcoal-black, 15%);
+}
+
+.products-carousel {
+    overflow-x: scroll;
+    flex-wrap: nowrap!important;
+    display: flex;
+    flex-direction: row;
+}

@@ -1,0 +1,66 @@
+.btn-jungle {
+    color: #fff;
+    background-color: $jungle-green;
+    border-color: $jungle-green;
+    letter-spacing: 0.05em;
+    border-radius: 0.375rem;
+}
+
+.btn-jungle:hover,
+.btn-jungle:active,
+.btn-jungle:focus {
+    /* let's darken $jungle-green a bit for hover effect */
+    background-color: darken($color: $jungle-green, $amount: 5%);
+    color: #ffffff;
+    border-color: darken($color: $jungle-green, $amount: 5%);
+}
+
+.btn-leaf {
+    color: #fff;
+    background-color: $leaf-green;
+    border-color: $leaf-green;
+    letter-spacing: 0.05em;
+    border-radius: 0.375rem;
+    &:disabled {
+        cursor:not-allowed;
+    }
+}
+
+.btn-leaf:hover,
+.btn-leaf:active,
+.btn-leaf:focus {
+    /* let's darken $leaf-green a bit for hover effect */
+    background-color: darken($color: $leaf-green, $amount: 5%);
+    color: #ffffff;
+    border-color: darken($color: $leaf-green, $amount: 5%);
+}
+
+.btn-sienna {
+    color: #fff;
+    background-color: $sienna-orange;
+    border-color: $sienna-orange;
+    letter-spacing: 0.05em;
+    border-radius: 0.375rem;
+    &:disabled {
+        cursor:not-allowed;
+    }
+}
+
+.btn-sienna:hover,
+.btn-sienna:active,
+.btn-sienna:focus {
+    /* let's darken $sienna-orange a bit for hover effect */
+    background-color: darken($color: $sienna-orange, $amount: 5%);
+    color: #ffffff;
+    border-color: darken($color: $sienna-orange, $amount: 5%);
+}
+
+.btn-outline-sienna {
+    @include button-outline-variant($sienna-orange, $sienna-orange, lighten($sienna-orange,35%), $sienna-orange);
+}
+.btn-outline-leaf {
+    @include button-outline-variant($leaf-green, $leaf-green, lighten($leaf-green,35%), $leaf-green);
+}
+.btn-outline-jungle {
+    @include button-outline-variant($jungle-green, $jungle-green, lighten($jungle-green,35%), $jungle-green);
+}

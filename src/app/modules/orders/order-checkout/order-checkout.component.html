@@ -1,0 +1,39 @@
+<div class="checkout-panel panel">
+    <div class="checkout-panel-header panel-header text-center">
+        <h5 class="panel-title">Resumen de Orden
+            <br /><span class="text-sienna">#{{order.id.toString().padStart(5,'0')}}</span>
+        </h5>
+    </div>
+    <div class="checkout-panel-body panel-body">
+        <h6 class="text-strong">Artículos:</h6>
+        <div class="list-group order-checkout-list-group" *ngIf="order.products.length > 0;else EmptyCheckoutContent">
+            <div class="list-group-item order-checkout-list-item" *ngFor="let product of order.products">
+                <span class="product-description">{{product.title ? product.title: product.name}}</span>
+                <i class="fa-solid fa-circle-xmark text-charcoal-muted float-end mt-1 delete-product-button"></i>
+                <span class="float-end me-2">{{product.price.toString() | currency }}</span>
+            </div>
+            <div class="list-group-item order-checkout-list-item text-strong">
+                <span class="product-description">Total</span>
+                <span class="text-sienna float-end">{{order.total.toString() | currency}}</span>
+            </div>
+            <div class="list-group-item order-checkout-list-item d-flex justify-content-between pe-0 align-middle">
+                <span class="mt-1">Propina:</span>
+                <div class="input-group tip-input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control tip-input" />
+                </div>
+            </div>
+        </div>
+        <ng-template #EmptyCheckoutContent>
+            <div class="empty-checkout-content text-center">
+                <div class="empty-checkout-icons">
+                    <i class="fa-solid fa-burger me-1"></i>
+                    <i class="fa-solid fa-utensils me-1"></i>
+                    <i class="fa-solid fa-mug-saucer"></i>
+                </div>
+                <p>No hay productos en esta orden</p>
+            </div>
+        </ng-template>
+    </div>
+    <app-pos-payment-method [orderTotal]="order.total"  *ngIf="order.products.length > 0"></app-pos-payment-method>
+</div>

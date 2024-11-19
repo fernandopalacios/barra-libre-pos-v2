@@ -1,0 +1,56 @@
+@import '_custom-colors.scss';
+
+@media(hover: hover) and (pointer: fine) {
+    .gray-button {
+        &:hover {
+            background-color: darken($background-gray, $amount: 15%);
+            border-color: darken($background-gray, $amount: 25%);
+        }
+
+    }
+    .yellow-button:hover {
+        background-color: $caramel-yellow;
+        border-color: darken($caramel-yellow, $amount: 25%);
+    }
+}
+
+.keypad-table {
+    width: 100%;
+    margin: 0 auto;
+
+    .keypad-cell {
+        width: 33%;
+        height: 100px;
+        cursor: pointer;
+
+        .keypad-button {
+            display: grid;
+            align-items: center;
+            font-size: 2rem;
+            min-width: 100%;
+            min-height: 100%;
+            border: 1px solid;
+            border-radius: 0.375rem;
+
+            &.gray-button {
+                background-color: $background-gray;
+                border-color: darken($background-gray, $amount: 15%);
+                
+                &:active {
+                    background-color: darken($background-gray, $amount: 15%);
+                    border-color: darken($background-gray, $amount: 25%);
+                }
+            }
+
+            &.yellow-button {
+                background-color: lighten($caramel-yellow, 10%);
+                border-color: darken($caramel-yellow, $amount: 15%);
+                &:active {
+                    background-color: $caramel-yellow;
+                    border-color: darken($caramel-yellow, $amount: 25%);                   
+                }
+
+            }
+        }
+    }
+}

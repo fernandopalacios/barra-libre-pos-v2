@@ -1,0 +1,16 @@
+.product-card {
+    min-height: 328px;
+    .product-card-body {
+        border-bottom: none;
+
+        .product-image-container {
+            width: 100%;
+            .product-image {
+                width: 100%;
+            }
+        }
+    }
+    .product-card-footer {
+        border-top: 0;
+    }
+}

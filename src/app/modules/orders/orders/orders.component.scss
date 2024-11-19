@@ -1,0 +1,20 @@
+@import '_custom-colors.scss';
+
+.order-container {
+    height: calc(100vh - 50px);
+    
+    .orders-list-section {
+        height: 100%;
+    }
+    .products-section {
+        border-left: solid 2px $background-gray;
+        border-right: solid 2px $background-gray;
+        background-color: $background-gray;
+        overflow-y: scroll;
+        height: 100%;
+    }
+    .checkout-section {
+        height: 100%;
+        overflow-y: scroll;
+    }
+}

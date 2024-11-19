@@ -1,0 +1,16 @@
+@import '_custom-colors.scss';
+
+.wizard-nav-tabs {
+    .wizard-link {
+        color: $charcoal-black;
+        border: none;
+        border-radius: 0px;
+        border-top: 3px solid $white;
+
+        &.active {
+            border-top: 3px solid $sienna-orange;
+            color: $sienna-orange;
+        }
+
+    }
+}

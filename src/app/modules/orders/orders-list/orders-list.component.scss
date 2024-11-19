@@ -1,0 +1,39 @@
+@import '_custom-colors.scss';
+
+.orders-list-group {
+    overflow-y: scroll;
+
+    .orders-list-item {
+        border-radius: 0;
+        border-bottom: none;
+        border-right: none;
+        border-left: none;
+        border-top: 1px solid lighten($charcoal-black, 60%);
+
+        &:first-child {
+            border-top: none;
+        }
+
+        .orders-list-item-link {
+            text-decoration: none;
+            color: $charcoal-black;
+            cursor: pointer;
+
+            &.active,
+            &:hover {
+                font-weight: bold;
+                background-color: $white;
+                color: $sienna-orange;
+            }
+        }
+    }
+}
+
+
+.empty-orders-list-content {
+    color: lighten($charcoal-black, 40%);
+
+    .empty-orders-list-icons {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,147 @@
+@import "_custom-colors";
+
+@media (max-width: 575px) { 
+    .logo-card{
+        height: 312px;
+        .logo-content {
+            width: 143px;
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+    .logo-card{
+        height: 400px;
+        .logo-content {
+            width: 183px;
+        }
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+    .logo-card{
+        height: 312px;
+        .logo-content {
+            width: 143px;
+        }
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+    .logo-card{
+        height: 400px;
+        .logo-content {
+            width: 183px;
+        }
+    }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+    
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { 
+    
+}
+
+.splash-container {
+    background: rgb(152, 182, 52); 
+}
+
+
+.logo-card {
+    background-color: $white;
+    border-radius: 600px;
+    display: flex;
+    margin: 0 auto;
+
+    .logo-card-body {
+        .logo-content {
+            margin: auto 0;
+            display: inline-block;
+            .logo {
+                width: inherit;
+                height: auto;
+
+                &.main {
+                    float: right;
+                    padding-right: 6px;
+                }
+
+                &.customer {
+                    float: left;
+                }
+            }
+
+        }
+
+    }
+
+}
+
+
+
+
+.login-card {
+    border: none;
+
+    .login-card-header {
+        background-color: $white;
+        border-bottom: 1px solid $jungle-green;
+    }
+}
+
+.jungle-green-button {
+    background-color: $jungle-green;
+}
+
+.btn-login-outline {
+    color: $leaf-green;
+    background-color: #ffffff;
+    border-color: $leaf-green;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.btn-login-outline {
+    color: $leaf-green;
+    background-color: #ffffff;
+    border-color: $leaf-green;
+    font-weight: bold;
+    border-radius: 0.375rem;
+}
+
+.btn-login-outline:hover,
+.btn-login-outline:active,
+.btn-login-outline:focus,
+.btn-login-outline.active {
+    background: $leaf-green;
+    color: #ffffff;
+    border-color: $leaf-green;
+
+}
+
+.btn-login {
+    width: 100%;
+    color: #fff;
+    background-color: $jungle-green;
+    border-color: $jungle-green;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    border-radius: 0.375rem;
+}
+
+.btn-login:hover,
+.btn-login:active,
+.btn-login:focus,
+.btn-login.active {
+    /* let's darken $jungle-green a bit for hover effect */
+    background: darken($color: $jungle-green, $amount: 5%);
+    color: #ffffff;
+    border-color: darken($color: $jungle-green, $amount: 5%);
+}

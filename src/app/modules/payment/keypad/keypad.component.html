@@ -1,0 +1,48 @@
+<div class="keypad-container text-center">
+    <table class="keypad-table">
+        <tr class="keypad-row">
+            <td class="keypad-cell p-2">
+                <div class="keypad-button gray-button" (click)="value = value + '1'; clickKeypadButton();"><i class="fa-solid fa-1"></i></div>
+            </td>
+            <td class="keypad-cell p-2">
+                <div class="keypad-button gray-button" (click)="value = value + '2'; clickKeypadButton();"><i class="fa-solid fa-2"></i></div>
+            </td>
+            <td class="keypad-cell p-2">
+                <div class="keypad-button gray-button" (click)="value = value + '3'; clickKeypadButton();"><i class="fa-solid fa-3"></i></div>
+            </td>
+        </tr>
+        <tr class="keypad-row">
+            <td class="keypad-cell p-2">
+                <div class="keypad-button gray-button" (click)="value = value + '4'; clickKeypadButton();"><i class="fa-solid fa-4"></i></div>
+            </td>
+            <td class="keypad-cell p-2">
+                <div class="keypad-button gray-button" (click)="value = value + '5'; clickKeypadButton();"><i class="fa-solid fa-5"></i></div>
+            </td>
+            <td class="keypad-cell p-2">
+                <div class="keypad-button gray-button" (click)="value = value + '6'; clickKeypadButton();"><i class="fa-solid fa-6"></i></div>
+            </td>
+        </tr>
+        <tr class="keypad-row">
+            <td class="keypad-cell p-2">
+                <div class="keypad-button gray-button" (click)="value = value + '7'; clickKeypadButton();"><i class="fa-solid fa-7"></i></div>
+            </td>
+            <td class="keypad-cell p-2">
+                <div class="keypad-button gray-button" (click)="value = value + '8'; clickKeypadButton();"><i class="fa-solid fa-8"></i></div>
+            </td>
+            <td class="keypad-cell p-2">
+                <div class="keypad-button gray-button" (click)="value = value + '9'; clickKeypadButton();"><i class="fa-solid fa-9"></i></div>
+            </td>
+        </tr>
+        <tr class="keypad-row">
+            <td class="keypad-cell p-2">
+                <div *ngIf="allowDecimal" class="keypad-button gray-button" (click)="value = value + '.'; clickKeypadButton();">.</div>
+            </td>
+            <td class="keypad-cell p-2">
+                <div class="keypad-button gray-button" (click)="value = value + '0'; clickKeypadButton();"><i class="fa-solid fa-0"></i></div>
+            </td>
+            <td class="keypad-cell p-2">
+                <div class="keypad-button yellow-button" (click)="value = (value.length > 1 ? value.substring(0, value.length - 1) : ''); clickKeypadButton();"><i class="fa-solid fa-delete-left"></i></div>
+            </td>
+        </tr>
+    </table>
+</div>

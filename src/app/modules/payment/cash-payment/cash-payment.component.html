@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-8">
+        <app-pos-keypad (keypadValue)="setPaymentValue($event)"></app-pos-keypad>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <div class="payment-method-form">
+            <div class="form-group mb-4">
+                <label class="form-label text-strong pe-2 mb-0" for="total"><i class="fa fa-dollar-sign me-1"></i>Total:</label>
+                <input type="text" name="total" id="total" class="form-control payment-method-control" [(ngModel)]="orderTotalString" [disabled]="true"/>
+            </div>
+            <div class="form-group mb-4">
+                <label class="form-label text-strong pe-2 mb-0" for="payment"><i class="fa fa-dollar-sign"><i class="fa-solid fa-right-to-bracket me-1"></i></i>Pago:</label>
+                <input type="text" name="payment" id="payment" class="form-control payment-method-control" [(ngModel)]="cashPaymentString" [disabled]="true"/>
+            </div>
+            <div class="form-group">
+                <label class="form-label text-strong pe-2 mb-0" for="change"><i class="fa fa-dollar-sign"></i><i class="fa-solid fa-right-left me-1"></i>Cambio:</label>
+                <input type="text" name="change" id="change" class="form-control payment-method-control" [(ngModel)]="cashChangeString" [disabled]="true"/>
+            </div>
+        </div>
+    </div>
+</div>
