@@ -1,3 +1,6 @@
+@use 'bootstrap/scss/bootstrap' as bootstrap;
+@use "./custom-colors" as *;
+
 .btn-jungle {
     color: #fff;
     background-color: $jungle-green;
@@ -56,11 +59,11 @@
 }
 
 .btn-outline-sienna {
-    @include button-outline-variant($sienna-orange, $sienna-orange, lighten($sienna-orange,35%), $sienna-orange);
+    @include bootstrap.button-outline-variant($sienna-orange, $sienna-orange, lighten($sienna-orange,35%), $sienna-orange);
 }
 .btn-outline-leaf {
-    @include button-outline-variant($leaf-green, $leaf-green, lighten($leaf-green,35%), $leaf-green);
+    @include bootstrap.button-outline-variant($leaf-green, $leaf-green, lighten($leaf-green,35%), $leaf-green);
 }
 .btn-outline-jungle {
-    @include button-outline-variant($jungle-green, $jungle-green, lighten($jungle-green,35%), $jungle-green);
+    @include bootstrap.button-outline-variant($jungle-green, $jungle-green, lighten($jungle-green,35%), $jungle-green);
 }

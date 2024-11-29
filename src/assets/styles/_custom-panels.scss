@@ -1,11 +1,15 @@
+@use 'bootstrap/scss/bootstrap' as bootstrap;
+@use './custom-colors' as *;
+
+
 .panel {
     height: 100%;
     .panel-header {
-        margin-bottom: $spacer * 0.75;
+        margin-bottom: bootstrap.$spacer * 0.75;
         .panel-title {
-            padding-bottom: $spacer * 0.75;
-            padding-top: $spacer * 0.75;
-            margin-bottom: $spacer * 0.75;
+            padding-bottom: bootstrap.$spacer * 0.75;
+            padding-top: bootstrap.$spacer * 0.75;
+            margin-bottom: bootstrap.$spacer * 0.75;
             border-bottom: 1px solid $jungle-green;
             font-weight: bold;
         }

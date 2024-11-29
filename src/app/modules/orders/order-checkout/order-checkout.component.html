@@ -5,6 +5,21 @@
         </h5>
     </div>
     <div class="checkout-panel-body panel-body">
+        <ul ngbNav #nav="ngbNav" class="nav-pills nav-pills-order-sitting">
+            <li ngbNavItem>
+                <button ngbNavLink>Para Comer Aquí</button>
+                <ng-template ngbNavContent>
+                    <div class="form-group inline-group mt-3">
+                        <span class="mt-1 me-2">No. de Mesa:</span>
+                        <input type="text" class="form-control table-number-input" />
+                    </div>
+                </ng-template>
+            </li>
+            <li ngbNavItem>
+                <button ngbNavLink>Para Llevar</button>
+            </li>
+        </ul>
+        <div [ngbNavOutlet]="nav" class="mb-4"></div>
         <h6 class="text-strong">Artículos:</h6>
         <div class="list-group order-checkout-list-group" *ngIf="order.products.length > 0;else EmptyCheckoutContent">
             <div class="list-group-item order-checkout-list-item" *ngFor="let product of order.products">

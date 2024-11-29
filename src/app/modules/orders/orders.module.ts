@@ -10,6 +10,7 @@ import { OrderCheckoutComponent } from './order-checkout/order-checkout.componen
 import { EventService } from '../../services/event.service';
 import { PaymentModule } from '../payment/payment.module';
 import { ToolbarComponent } from '../../toolbar/toolbar.component';
+import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ToolbarComponent } from '../../toolbar/toolbar.component';
     ProductsModule,
     PaymentModule,
     OrdersRouterModule,
-    ToolbarComponent
+    ToolbarComponent,
+    NgbNavModule
   ],
   providers: [
     OrderService,
