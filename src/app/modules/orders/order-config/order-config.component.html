@@ -1,0 +1,22 @@
+<ul ngbNav #nav="ngbNav" class="nav-pills nav-pills-order-sitting" [(activeId)]="order.orderType">
+    <li ngbNavItem [ngbNavItem]="1">
+        <button ngbNavLink (click)="setOrderType(1)">Para Comer Aquí</button>
+        <ng-template ngbNavContent>
+            <div class="form-group mt-3">
+                <label class="label-form">No. de Mesa:</label>
+                <div class="inline-group d-flex">
+                    <input placeholder="No. de Mesa" type="text" class="form-control table-number-input me-2" [(ngModel)]="order.tableNumber" />
+                    <button class="btn btn-leaf" (click)="setTableNumber()">Asignar</button>
+                </div>
+            </div>
+        </ng-template>
+    </li>
+    <li ngbNavItem [ngbNavItem]="2">
+        <button ngbNavLink (click)="setOrderType(2)">Para Llevar</button>
+    </li>
+    </ul>
+    <ngb-alert *ngIf="successMessage" (closed)="successMessage = ''" [dismissible]="false"
+        #selfClosingAlert [type]="'success'" class="table-assignation-alert p-2 mb-0 mt-2" [@enterAnimation]>
+        {{successMessage}}
+    </ngb-alert>
+    <div [ngbNavOutlet]="nav" class="mb-4"></div>

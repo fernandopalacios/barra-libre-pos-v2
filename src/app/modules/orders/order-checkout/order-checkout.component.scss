@@ -33,23 +33,20 @@
     border-top: 1px solid $jungle-green;
 }
 
-.delete-product-button:hover, .delete-product-button:active {
+.delete-product-button:hover,
+.delete-product-button:active {
     color: $bootstrap-red;
     cursor: pointer;
 }
 
 .tip-input-group {
     width: 130px;
+
     input {
         text-align: right;
     }
 }
 
-.inline-group{
-    
-    .table-number-input {
-        width: 130px;
-        display: inline;
-    }
-
+.btn-close {
+    padding: 0.25rem !important;
 }

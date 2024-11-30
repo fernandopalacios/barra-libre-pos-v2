@@ -10,7 +10,10 @@
             <li class="list-group-item orders-list-item" *ngFor="let order of orders">
                 <a class="list-group-item-link orders-list-item-link" [ngClass]="{'active': order.id == selectedOrderId}"
                     (click)="clickSelectOrder(order)">
-                    <span class="d-md-none d-lg-inline">Orden</span> #{{order?.id?.toString()?.padStart(5,'0')}}
+                    <span *ngIf="order.orderType == 1;else TakeAwaySpan">Mesa #{{order.tableNumber}}</span>
+                    <ng-template #TakeAwaySpan>
+                        <span  class="d-md-none d-lg-inline">Orden</span> #{{order?.id?.toString()?.padStart(5,'0')}}
+                    </ng-template>
                 </a>
             </li>
         </ul>

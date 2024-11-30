@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { Product } from '../../../models/product';
+import { Component, Input, OnInit } from '@angular/core';
 import { Order } from '../../../models/order';
+import { EventService } from '../../../services/event.service';
+import { OrderType } from '../../../enums/OrderTypes';
 
 @Component({
   selector: 'app-pos-order-checkout',
@@ -10,4 +11,5 @@ import { Order } from '../../../models/order';
 })
 export class OrderCheckoutComponent {
   @Input() order: Order;
+
 }
