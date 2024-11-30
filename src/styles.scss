@@ -1,8 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'bootstrap/scss/bootstrap';
-@import '_custom-colors.scss';
-@import '_custom-buttons.scss';
-@import '_custom-panels.scss';
+@use 'bootstrap/scss/bootstrap';
+@use '_custom-colors.scss' as colors;
+@use '_custom-buttons.scss';
+@use '_custom-panels.scss';
+@use 'custom-nav';
 
 html,
 body {
@@ -10,7 +11,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    color: $charcoal-black;
+    color: colors.$charcoal-black;
 }
 
 .w100 {
@@ -22,11 +23,11 @@ body {
 }
 
 .text-sienna {
-    color: $sienna-orange;
+    color: colors.$sienna-orange;
 }
 
 .text-jungle {
-    color: $jungle-green;
+    color: colors.$jungle-green;
 }
 
 .text-right {
@@ -34,5 +35,5 @@ body {
 }
 
 .text-charcoal-muted {
-    color: lighten($charcoal-black, 30%);
+    color: lighten(colors.$charcoal-black, 30%);
 }

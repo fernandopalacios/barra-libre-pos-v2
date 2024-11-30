@@ -10,19 +10,26 @@ import { OrderCheckoutComponent } from './order-checkout/order-checkout.componen
 import { EventService } from '../../services/event.service';
 import { PaymentModule } from '../payment/payment.module';
 import { ToolbarComponent } from '../../toolbar/toolbar.component';
+import { NgbAlert, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { OrderConfigComponent } from './order-config/order-config.component';
 
 @NgModule({
   declarations: [
     OrdersComponent,
     OrdersListComponent,
-    OrderCheckoutComponent
+    OrderCheckoutComponent,
+    OrderConfigComponent
   ],
   imports: [
+    NgbAlert,
+    FormsModule,
     CommonModule,
     ProductsModule,
     PaymentModule,
     OrdersRouterModule,
-    ToolbarComponent
+    ToolbarComponent,
+    NgbNavModule
   ],
   providers: [
     OrderService,

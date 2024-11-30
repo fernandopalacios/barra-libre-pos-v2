@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { OrdersListComponent } from "../orders-list/orders-list.component";
 import { OrderService } from '../../../services/order.service';
 import { Order } from '../../../models/order';
 import { EventService } from '../../../services/event.service';
 import { Product } from '../../../models/product';
 import Swal from 'sweetalert2';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-pos-orders',
@@ -17,7 +18,7 @@ export class OrdersComponent implements OnInit {
   ordersList: Order[] = []
   selectedOrder: Order;
 
-  constructor(private orderService: OrderService, private eventService: EventService) { }
+  constructor(private orderService: OrderService, private eventService: EventService, private cd: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.eventService.addProductEventListener().subscribe(product => {
@@ -34,12 +35,34 @@ export class OrdersComponent implements OnInit {
 
     this.eventService.setPaymentMethodEventListener().subscribe(paymentMethod => {
       if (this.selectedOrder) {
-        this.orderService.closeOrder(this.selectedOrder.id, paymentMethod).subscribe({
+        this.orderService.closeOrder(this.selectedOrder.id, paymentMethod).pipe(take(1)).subscribe({
           next: (response) => {
             this.triggerAlert("success", "La orden ha sido cerrada correctamente");
             this.getOrders();
           }
         });
+      }
+    });
+
+    this.eventService.setOrderTypeEventListener().subscribe({
+      next: orderType => {
+        if (this.selectedOrder) {
+          this.orderService.setOrderType(this.selectedOrder.id,orderType).pipe(take(1)).subscribe({
+  
+          }); 
+        }
+      }
+    });
+
+    this.eventService.setOrderTableListener().subscribe({
+      next: tableNumber => {
+        if (this.selectedOrder) {
+          this.orderService.setOrderTableNumber(this.selectedOrder.id, tableNumber).pipe(take(1)).subscribe({
+            next: () => {
+              this.eventService.emitDisplayTableAlert("Mesa asignada correctamente");
+            }
+          })
+        }
       }
     })
 
@@ -70,7 +93,7 @@ export class OrdersComponent implements OnInit {
       next: (products: Product[]) => {
         this.selectedOrder.products = products;
       }
-    })
+    });
   }
 
   private triggerAlert(alertType: any, message: any) {

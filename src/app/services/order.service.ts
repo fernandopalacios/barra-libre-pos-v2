@@ -30,4 +30,12 @@ export class OrderService {
   closeOrder(orderId: number, paymentMethod: any): Observable<any> {
     return this.httpClient.patch(`${this.apiUrl}/${orderId}/${paymentMethod}`, {});
   }
+
+  setOrderType(orderId:number, orderType: number): Observable<any> {
+    return this.httpClient.patch(`${this.apiUrl}/${orderId}/order-type/${orderType}`, {});
+  }
+  
+  setOrderTableNumber(orderId:number, tableNumber: any): Observable<any> {
+    return this.httpClient.patch(`${this.apiUrl}/${orderId}/table-number/${tableNumber}`, {});
+  }
 }

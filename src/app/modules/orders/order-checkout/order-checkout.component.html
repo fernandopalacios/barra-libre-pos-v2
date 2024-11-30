@@ -5,6 +5,7 @@
         </h5>
     </div>
     <div class="checkout-panel-body panel-body">
+        <app-pos-order-config [order]="order"></app-pos-order-config>
         <h6 class="text-strong">Artículos:</h6>
         <div class="list-group order-checkout-list-group" *ngIf="order.products.length > 0;else EmptyCheckoutContent">
             <div class="list-group-item order-checkout-list-item" *ngFor="let product of order.products">
