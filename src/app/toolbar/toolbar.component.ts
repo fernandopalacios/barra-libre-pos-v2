@@ -2,6 +2,7 @@ import { DatePipe, registerLocaleData } from '@angular/common';
 import { Component, LOCALE_ID } from '@angular/core';
 import { map, share, Subscription, timer } from 'rxjs';
 import localeEsMx from '@angular/common/locales/es-MX';
+import { AuthService } from '../services/auth.service';
 
 registerLocaleData(localeEsMx, 'es-MX');
 
@@ -21,6 +22,8 @@ export class ToolbarComponent {
   intervalId:any;
   subscription: Subscription;
 
+  constructor(private authService: AuthService) {}
+
   ngOnInit() {
     // Using Basic Interval
     this.intervalId = setInterval(() => {
@@ -36,6 +39,10 @@ export class ToolbarComponent {
       .subscribe(time => {
         this.rxTime = time;
       });
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
   ngOnDestroy() {

@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  apiUrl: string = isDevMode() ? 'http://localhost:5218/api/access' : 'http://f2.barralibre.io/api/access';
+  apiUrl: string = isDevMode() ? 'http://localhost:5218/api/auth' : 'http://f2.barralibre.io/api/auth';
 
   constructor(private httpClient: HttpClient, private router: Router) { }
 
