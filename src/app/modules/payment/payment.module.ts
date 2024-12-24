@@ -8,6 +8,7 @@ import { CashPaymentComponent } from './cash-payment/cash-payment.component';
 import { TransferPaymentComponent } from './transfer-payment/transfer-payment.component';
 import { MixedPaymentComponent } from './mixed-payment/mixed-payment.component';
 import { NgbNav, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { ConfigurationService } from '../../services/configuration.service';
 
 
 
@@ -32,6 +33,9 @@ import { NgbNav, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
     PaymentMethodComponent,
     TransferPaymentComponent,
     MixedPaymentComponent
+  ],
+  providers: [
+    ConfigurationService
   ]
 })
 export class PaymentModule { }
