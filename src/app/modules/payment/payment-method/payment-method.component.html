@@ -1,10 +1,10 @@
 <div class="payment-method-container">
     <h6 class="text-strong">Método de Pago:</h6>
     <div class="payment-method-button-group">
-        <button class="payment-method-button px-0 btn btn-outline-sienna px-1 m-1" (click)="open(PaymentModal, 1)"><i class="fa-solid fa-money-bills"></i><br> Efectivo</button>
-        <button class="payment-method-button px-0 btn btn-outline-sienna px-1 m-1" (click)="open(PaymentModal, 2)"><i class="fa-solid fa-credit-card"></i> <br> Tarjeta</button>
-        <button class="payment-method-button px-0 btn btn-outline-sienna px-1 m-1" (click)="open(PaymentModal, 3)"><i class="fa-solid fa-money-bill-transfer"></i> <br> Transferencia</button>
-        <button class="payment-method-button px-0 btn btn-outline-sienna px-1 m-1" (click)="open(PaymentModal, 4)"><i class="fa-solid fa-money-bills"></i> | <i class="fa-solid fa-credit-card"></i> <br> Combinado</button>
+        <button class="payment-method-button px-0 btn btn-outline-sienna px-1 m-1" (click)="open(PaymentModal, 1)" *ngIf="paymentMethods.cash"><i class="fa-solid fa-money-bills"></i><br> Efectivo</button>
+        <button class="payment-method-button px-0 btn btn-outline-sienna px-1 m-1" (click)="open(PaymentModal, 2)" *ngIf="paymentMethods.card"><i class="fa-solid fa-credit-card"></i> <br> Tarjeta</button>
+        <button class="payment-method-button px-0 btn btn-outline-sienna px-1 m-1" (click)="open(PaymentModal, 3)" *ngIf="paymentMethods.transfer"><i class="fa-solid fa-money-bill-transfer"></i> <br> Transferencia</button>
+        <button class="payment-method-button px-0 btn btn-outline-sienna px-1 m-1" (click)="open(PaymentModal, 4)" *ngIf="paymentMethods.mixed"><i class="fa-solid fa-money-bills"></i> | <i class="fa-solid fa-credit-card"></i> <br> Combinado</button>
     </div>
 </div>
 

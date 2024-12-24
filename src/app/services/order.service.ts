@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable, isDevMode } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,12 +7,18 @@ import { Observable } from 'rxjs';
 })
 export class OrderService {
 
-  apiUrl: string = 'http://localhost:5180/orders';
+  apiUrl: string = isDevMode() ? 'http://localhost:5248/api/orders' : 'http://f2.barralibre.io/api/orders';
+  private readonly token: string = "";
+  headers: HttpHeaders;
+
   // apiUrl: string = 'http://localhost:3000/orders';
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+    this.token = sessionStorage.getItem('token')!;
+    this.headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
+  }
 
   getOrders(): Observable<any> {
-    return this.httpClient.get(`${this.apiUrl}/active`);
+    return this.httpClient.get(`${this.apiUrl}/active`, {headers: this.headers});
   }
 
   createOrder(): Observable<any> {
