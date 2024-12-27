@@ -5,12 +5,16 @@
     <div class="col-xs-12 col-sm-4">
         <div class="transfer-payment-information mb-4">
             <div class="information-group mb-4">
+                <b><i class="fa-solid fa-money-check-dollar me-2"></i>Banco:</b> <br>
+                <span class="text-charcoal-muted information-value d-block">{{bank}}</span>
+            </div>
+            <div class="information-group mb-4">
                 <b><i class="fa-solid fa-money-check-dollar me-2"></i>No. de Cuenta:</b> <br>
-                <span class="text-charcoal-muted information-value d-block">1234567890123456</span>
+                <span class="text-charcoal-muted information-value d-block">{{accountNumber}}</span>
             </div>
             <div class="information-group">
                 <b><i class="fa-solid fa-key me-2"></i>CLABE:</b> <br>
-                <span class="text-charcoal-muted information-value d-block">1234567890123</span>
+                <span class="text-charcoal-muted information-value d-block">{{bankCode}}</span>
             </div>
         </div>
         <div class="payment-method-form">

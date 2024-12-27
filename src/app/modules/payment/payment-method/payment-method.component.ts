@@ -30,7 +30,7 @@ export class PaymentMethodComponent implements OnInit {
       next: (response) => {
         this.paymentMethods = response;
       }
-    })
+    });
   }
 
   open(content: TemplateRef<any>, selectedPaymentMethod: number) {

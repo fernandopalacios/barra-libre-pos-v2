@@ -9,12 +9,11 @@ export class OrderService {
 
   apiUrl: string = isDevMode() ? 'http://localhost:5248/api/orders' : 'http://f2.barralibre.io/api/orders';
   private readonly token: string = "";
-  headers: HttpHeaders;
+  headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
 
-  // apiUrl: string = 'http://localhost:3000/orders';
   constructor(private httpClient: HttpClient) {
     this.token = sessionStorage.getItem('token')!;
-    this.headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
+    this.headers = this.headers.append('Authorization', `Bearer ${this.token}`);
   }
 
   getOrders(): Observable<any> {
@@ -22,26 +21,26 @@ export class OrderService {
   }
 
   createOrder(): Observable<any> {
-    return this.httpClient.post(this.apiUrl, {});
+    return this.httpClient.post(this.apiUrl, {}, { headers: this.headers });
   }
 
   addOrderProduct(orderId: number, payload: any): Observable<any> {
-    return this.httpClient.post(`${this.apiUrl}/${orderId}/products`, payload);
+    return this.httpClient.post(`${this.apiUrl}/${orderId}/products`, payload, { headers: this.headers });
   }
 
   getOrderProducts(orderId: number): Observable<any> {
-    return this.httpClient.get(`${this.apiUrl}/${orderId}/products`);
+    return this.httpClient.get(`${this.apiUrl}/${orderId}/products`, { headers: this.headers });
   }
 
   closeOrder(orderId: number, paymentMethod: any): Observable<any> {
-    return this.httpClient.patch(`${this.apiUrl}/${orderId}/${paymentMethod}`, {});
+    return this.httpClient.patch(`${this.apiUrl}/${orderId}/payment-method/${paymentMethod}`, {}, { headers: this.headers });
   }
 
   setOrderType(orderId:number, orderType: number): Observable<any> {
-    return this.httpClient.patch(`${this.apiUrl}/${orderId}/order-type/${orderType}`, {});
+    return this.httpClient.patch(`${this.apiUrl}/${orderId}/order-type/${orderType}`, {}, { headers: this.headers });
   }
   
   setOrderTableNumber(orderId:number, tableNumber: any): Observable<any> {
-    return this.httpClient.patch(`${this.apiUrl}/${orderId}/table-number/${tableNumber}`, {});
+    return this.httpClient.patch(`${this.apiUrl}/${orderId}/table-number/${tableNumber}`, {}, { headers: this.headers });
   }
 }
