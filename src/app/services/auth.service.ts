@@ -1,19 +1,21 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { isDevMode } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  apiUrl: string = isDevMode() ? 'http://localhost:5248/api/authentication' : 'http://f2.barralibre.io/api/authentication';
+  apiUrl: string = isDevMode() ? 'http://localhost:5248/api/authentication/' : 'http://f2.barralibre.io/api/authentication/';
+
+  // private apiUrl = `${environment.apiUrl}authentication`;
 
   constructor(private httpClient: HttpClient, private router: Router) { }
 
   login(payload: any) {
-    return this.httpClient.post<any>(`${this.apiUrl}/login`, payload);
+    return this.httpClient.post<any>(`${this.apiUrl}login`, payload);
   }
   
   setSession(user: string, token: string) {
