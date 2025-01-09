@@ -11,10 +11,10 @@ import { ProductService } from '../../../services/product.service';
 })
 export class ProductsListComponent implements OnInit {
 
-  products: Product[];
-  food: Product[];
-  drinks: Product[];
-  snacks: Product[];
+  products: Product[] = [];
+  food: Product[] = [];
+  drinks: Product[] = [];
+  snacks: Product[] = [];
 
   constructor (private productService: ProductService) {}
 
