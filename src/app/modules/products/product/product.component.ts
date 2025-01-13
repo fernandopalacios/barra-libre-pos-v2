@@ -1,4 +1,4 @@
-import { Component, Input, output } from '@angular/core';
+import { Component, Input, isDevMode, output } from '@angular/core';
 import { Product } from '../../../models/product';
 import { EventService } from '../../../services/event.service';
 
@@ -10,6 +10,7 @@ import { EventService } from '../../../services/event.service';
 })
 export class ProductComponent {
   @Input() product:any;
+  imgBaseUrl: string = isDevMode() ? 'http://localhost:5234/Resources/' : 'http://f2.barralibre.io/Resources/';
   addedProduct = output<Product>();
   addIcon = 'fa-solid fa-circle-plus me-md-1';
   banIcon = 'fa-solid fa-ban';
